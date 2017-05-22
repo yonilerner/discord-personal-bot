@@ -12,6 +12,6 @@ app.get('/', (req: express.Request, res: express.Response) => {
 
 scheduleRocketLeagueMessage()
 
-app.listen(8080, data => {
-    console.log('Listening at 8080')
+app.listen(process.env.NODE_PORT || 8080, data => {
+    console.log('Listening...')
 })
