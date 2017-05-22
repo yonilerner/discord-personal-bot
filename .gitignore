@@ -1,0 +1,5 @@
+node_modules
+.alm
+build
+.idea
+.env

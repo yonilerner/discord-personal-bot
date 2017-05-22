@@ -1,0 +1,35 @@
+{
+  "name": "discord-account-bot",
+  "version": "1.0.0",
+  "description": "",
+  "main": "build/server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "node_modules/.bin/tsc",
+    "watch": "node_modules/.bin/tsc --watch"
+  },
+  "author": "Yoni Lerner",
+  "license": "MIT",
+  "dependencies": {
+    "body-parser": "^1.17.2",
+    "discord.js": "^11.1.0",
+    "dotenv": "^4.0.0",
+    "express": "^4.15.3",
+    "knex": "^0.13.0",
+    "later": "^1.2.0",
+    "mysql": "^2.13.0",
+    "reflect-metadata": "^0.1.10",
+    "request": "^2.81.0",
+    "request-promise": "^4.2.1",
+    "typeorm": "0.0.11"
+  },
+  "devDependencies": {
+    "@types/body-parser": "^1.16.3",
+    "@types/dotenv": "^4.0.0",
+    "@types/express": "^4.0.35",
+    "@types/knex": "0.0.50",
+    "@types/later": "^1.2.3",
+    "@types/request-promise": "^4.1.33",
+    "typescript": "^2.3.2"
+  }
+}
