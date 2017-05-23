@@ -12,6 +12,9 @@ const globals = {
 
     highlightWords: [
         /yoni/i
+    ],
+    highlightExceptions: [
+        /psyonix/i
     ]
 }
 
