@@ -14,7 +14,8 @@ const globals = {
         /yoni/i
     ],
     highlightExceptions: [
-        /psyonix/i
+        /psyonix/i,
+        /yoni25t/i
     ]
 }
 
