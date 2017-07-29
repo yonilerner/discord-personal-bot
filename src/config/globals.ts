@@ -8,7 +8,7 @@ const globals = {
 
     USER_TOKEN: process.env.USER_TOKEN,
     BOT_TOKEN: process.env.BOT_TOKEN,
-    ROCKET_LEAGUE_ID_TO_MESSAGE: process.env.ROCKET_LEAGUE_ID_TO_MESSAGE,
+    USER_ID: process.env.USER_ID,
 
     highlightWords: [
         /yoni/i

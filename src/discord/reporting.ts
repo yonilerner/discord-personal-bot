@@ -1,9 +1,10 @@
-import {botClient, userClient} from './client'
+import {client} from './client'
+import {globals} from '../config/globals'
 
 export async function report(message: string) {
-    let userToMessage = botClient.users.get(userClient.user.id)
+    let userToMessage = client.users.get(globals.USER_ID!)
     if (!userToMessage) {
-        userToMessage = await botClient.fetchUser(userClient.user.id)
+        userToMessage = await client.fetchUser(globals.USER_ID!)
     }
     try {
         await userToMessage.send(message)

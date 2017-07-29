@@ -3,14 +3,11 @@ import './init'
 import * as express from 'express'
 const app = express()
 
-import {botClient} from './discord/client'
-import {scheduleRocketLeagueMessage} from './discord/misc'
+import {client} from './discord/client'
 
 app.get('/', (req: express.Request, res: express.Response) => {
-    res.send(`Welcome to ${botClient.user.username}!`)
+    res.send(`Welcome to ${client.user.username}!`)
 })
-
-scheduleRocketLeagueMessage()
 
 app.listen(process.env.NODE_PORT || 8080, data => {
     console.log('Listening...')

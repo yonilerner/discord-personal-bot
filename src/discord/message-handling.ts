@@ -1,12 +1,11 @@
 import {Message, TextChannel} from 'discord.js'
 import {globals} from '../config/globals'
 import {report} from './reporting'
-import {userClient} from './client'
 
 export async function handleUserMessage(message: Message) {
     if (
         message.channel instanceof TextChannel &&
-        message.author.id !== userClient.user.id &&
+        message.author.id !== globals.USER_ID &&
         globals.highlightWords.some(regex => !!message.content.match(regex)) &&
         !globals.highlightExceptions.some(regex => !!message.content.match(regex))
     ) {
