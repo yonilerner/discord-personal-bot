@@ -12,7 +12,7 @@ const globals = {
 
     highlightWords: [
         /yoni/i,
-        /yoniee/i',
+        /yoniee/i,
         /yonee/i
     ],
     highlightExceptions: [
