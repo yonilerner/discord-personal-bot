@@ -11,7 +11,9 @@ const globals = {
     USER_ID: process.env.USER_ID,
 
     highlightWords: [
-        /yoni/i
+        /yoni/i,
+        /yoniee/i',
+        /yonee/i
     ],
     highlightExceptions: [
         /psyonix/i,
