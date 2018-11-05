@@ -27,9 +27,20 @@ agenda.define(DISCORD_NOTIFICATION_JOB, async (job, done) => {
 })
 
 export async function scheduleInLocalTime(message: string, name: string, data: any) {
-    const nowInPacific = moment().tz('America/Los_Angeles').toDate()
+    const nowInPacific = getCurrentPacificTime()
     const parsed = datejs(message, nowInPacific)
     return agenda.schedule(parsed, name, data)
+}
+
+export function getCurrentPacificTime() {
+    return new Date(
+        moment()
+            .tz('America/Los_Angeles')
+            .format()
+            .split('-')
+            .slice(0, -1)
+            .join('-')
+    )
 }
 
 export function cleanTimeMessage(msg: string) {
