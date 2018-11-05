@@ -29,6 +29,8 @@ client.on('debug', (info) => {
 const login = async () => {
     await client.login(globals.BOT_TOKEN!)
 
-    await report('Logged in!')
+    if (!client.user.username.toLowerCase().includes('test')) {
+        await report('Logged in!')
+    }
 }
 login()

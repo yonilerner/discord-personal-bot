@@ -31,3 +31,11 @@ export async function scheduleInLocalTime(message: string, name: string, data: a
     const inPacific = parsed.tz('America/Los_Angeles').toDate()
     return agenda.schedule(inPacific, name, data)
 }
+
+export function cleanTimeMessage(msg: string) {
+    msg = msg
+        .replace(/\./g, '')
+        .replace(/\s?([ap])\s+(m)\s/ig, '$1$2')
+        .replace(/\s:\s/ig, ':')
+    return msg
+}

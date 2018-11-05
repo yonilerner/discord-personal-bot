@@ -2,7 +2,7 @@ import './init'
 import * as express from 'express'
 import {client} from './discord/client'
 import {globals} from './config/globals'
-import {agenda, DISCORD_NOTIFICATION_JOB, scheduleInLocalTime} from './agenda'
+import {agenda, cleanTimeMessage, DISCORD_NOTIFICATION_JOB, scheduleInLocalTime} from './agenda'
 import {report} from './discord/reporting'
 import bodyParser = require('body-parser')
 
@@ -14,8 +14,9 @@ app.get('/', (req: express.Request, res: express.Response) => {
 })
 
 app.post('/remind', async (req: express.Request, res: express.Response) => {
-    const {message} = req.body
+    let {message} = req.body
     try {
+        message = cleanTimeMessage(message)
         console.log(`Reminder scheduled for '${message}'`)
         const response = await scheduleInLocalTime(message, DISCORD_NOTIFICATION_JOB, {
             message
