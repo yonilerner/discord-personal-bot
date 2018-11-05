@@ -4,6 +4,7 @@ import {client} from './discord/client'
 import {globals} from './config/globals'
 import {agenda, DISCORD_NOTIFICATION_JOB} from './agenda'
 import bodyParser = require('body-parser')
+import {report} from './discord/reporting'
 
 const app = express()
 app.use(bodyParser.json())
@@ -20,6 +21,7 @@ app.post('/remind', async (req: express.Request, res: express.Response) => {
             message
         })
         console.log(`Reminder scheduled for ${message} done`)
+        await report(`Reminder scheduled. Message: '${message}'. Response: ${JSON.stringify(response)}`)
         res.send({message, success: true, response})
     } catch (e) {
         console.error(`Error sending notification for '${message}'`, e)
