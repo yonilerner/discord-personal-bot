@@ -6,9 +6,8 @@ const globals = {
     DB_USER: process.env.DB_USER,
     DB_PASS: process.env.DB_PASS,
 
-    USER_TOKEN: process.env.USER_TOKEN,
-    BOT_TOKEN: process.env.BOT_TOKEN,
     USER_ID: process.env.USER_ID,
+    BOT_TOKEN: process.env.BOT_TOKEN,
 
     highlightWords: [
         /yoni/i,
@@ -18,7 +17,11 @@ const globals = {
     highlightExceptions: [
         /psyonix/i,
         /yoni25t/i
-    ]
+    ],
+
+    PORT: process.env.NODE_PORT || 8080,
+
+    MONGO_URL: process.env.MONGO_URL || ''
 }
 
 export {

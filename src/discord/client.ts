@@ -3,8 +3,7 @@ import {globals} from '../config/globals'
 import {report} from './reporting'
 import {handleUserMessage} from './message-handling'
 
-const client = new Client()
-
+export const client = new Client()
 
 client.on('ready', async () => {
     console.log(`Logged in as ${client.user.username}!`)
@@ -33,7 +32,3 @@ const login = async () => {
     await report('Logged in!')
 }
 login()
-
-export {
-    client
-}
