@@ -11,6 +11,7 @@
   "author": "Yoni Lerner",
   "license": "MIT",
   "dependencies": {
+    "agenda": "^2.0.2",
     "body-parser": "^1.17.2",
     "discord.js": "^11.1.0",
     "dotenv": "^4.0.0",
@@ -19,6 +20,7 @@
     "request-promise": "^4.2.1"
   },
   "devDependencies": {
+    "@types/agenda": "^2.0.3",
     "@types/body-parser": "^1.16.3",
     "@types/dotenv": "^4.0.0",
     "@types/express": "^4.0.35",
