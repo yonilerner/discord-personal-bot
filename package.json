@@ -13,9 +13,11 @@
   "dependencies": {
     "agenda": "^2.0.2",
     "body-parser": "^1.17.2",
+    "date.js": "^0.3.3",
     "discord.js": "^11.1.0",
     "dotenv": "^4.0.0",
     "express": "^4.15.3",
+    "moment-timezone": "^0.5.23",
     "request": "^2.81.0",
     "request-promise": "^4.2.1"
   },
@@ -24,6 +26,7 @@
     "@types/body-parser": "^1.16.3",
     "@types/dotenv": "^4.0.0",
     "@types/express": "^4.0.35",
+    "@types/moment-timezone": "^0.5.9",
     "@types/request-promise": "^4.1.33",
     "typescript": "^2.3.2"
   }

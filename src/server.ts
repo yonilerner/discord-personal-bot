@@ -2,9 +2,9 @@ import './init'
 import * as express from 'express'
 import {client} from './discord/client'
 import {globals} from './config/globals'
-import {agenda, DISCORD_NOTIFICATION_JOB} from './agenda'
-import bodyParser = require('body-parser')
+import {agenda, DISCORD_NOTIFICATION_JOB, scheduleInLocalTime} from './agenda'
 import {report} from './discord/reporting'
+import bodyParser = require('body-parser')
 
 const app = express()
 app.use(bodyParser.json())
@@ -17,7 +17,7 @@ app.post('/remind', async (req: express.Request, res: express.Response) => {
     const {message} = req.body
     try {
         console.log(`Reminder scheduled for '${message}'`)
-        const response = await agenda.schedule(message, DISCORD_NOTIFICATION_JOB, {
+        const response = await scheduleInLocalTime(message, DISCORD_NOTIFICATION_JOB, {
             message
         })
         console.log(`Reminder scheduled for ${message} done`)

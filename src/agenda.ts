@@ -1,6 +1,8 @@
 import Agenda = require('agenda')
 import {globals} from './config/globals'
 import {report} from './discord/reporting'
+import * as datejs from 'date.js'
+import * as moment from 'moment'
 
 export const agenda = new Agenda({
     db: {
@@ -23,3 +25,9 @@ agenda.define(DISCORD_NOTIFICATION_JOB, async (job, done) => {
     }
     done()
 })
+
+export async function scheduleInLocalTime(message: string, name: string, data: any) {
+    const parsed = moment(datejs(message))
+    const inPacific = parsed.tz('America/Los_Angeles').toDate()
+    return agenda.schedule(inPacific, name, data)
+}
