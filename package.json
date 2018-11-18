@@ -12,14 +12,14 @@
   "license": "MIT",
   "dependencies": {
     "agenda": "^2.0.2",
-    "body-parser": "^1.17.2",
+    "body-parser": "^1.18.3",
     "date.js": "^0.3.3",
-    "discord.js": "^11.1.0",
+    "discord.js": "^11.4.2",
     "dotenv": "^4.0.0",
-    "express": "^4.15.3",
+    "express": "^4.16.4",
     "moment-timezone": "^0.5.23",
-    "request": "^2.81.0",
-    "request-promise": "^4.2.1"
+    "request": "^2.88.0",
+    "request-promise": "^4.2.2"
   },
   "devDependencies": {
     "@types/agenda": "^2.0.3",
