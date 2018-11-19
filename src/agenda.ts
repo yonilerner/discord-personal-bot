@@ -29,6 +29,7 @@ agenda.define(DISCORD_NOTIFICATION_JOB, async (job, done) => {
 export async function scheduleInLocalTime(message: string, name: string, data: any) {
     const nowInPacific = getCurrentPacificTime()
     const parsed = datejs(message, nowInPacific)
+    await report(`Reminder scheduled. Message: '${message}'. Scheduled for ${parsed}`)
     const backToUtc = convertPacificToUtc(parsed)
     return agenda.schedule(backToUtc, name, data)
 }
