@@ -29,7 +29,24 @@ agenda.define(DISCORD_NOTIFICATION_JOB, async (job, done) => {
 export async function scheduleInLocalTime(message: string, name: string, data: any) {
     const nowInPacific = getCurrentPacificTime()
     const parsed = datejs(message, nowInPacific)
-    return agenda.schedule(parsed, name, data)
+    const backToUtc = convertPacificToUtc(parsed)
+    return agenda.schedule(backToUtc, name, data)
+}
+
+export function getPacificOffset() {
+    return '-' + moment().tz('America/Los_Angeles').format().split('-').slice(-1)[0]
+}
+
+export function convertPacificToUtc(date: Date) {
+    return new Date(
+        moment(
+            moment(date)
+                .format()
+                .replace('+00:00', getPacificOffset())
+        )
+            .tz('UTC')
+            .format()
+    )
 }
 
 export function getCurrentPacificTime() {
